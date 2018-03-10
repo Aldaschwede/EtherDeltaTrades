@@ -202,12 +202,9 @@ def getTrades(p_fromBlock, p_toBlock, ethereumAdress):
     toBlock   = fromBlock + p_static_iteration
     if toBlock > p_toBlock:
       toBlock = p_toBlock
-      
-    fromBlock = str(fromBlock)
-    toBlock   = str(toBlock)
     
-    print "reading blocks from " + fromBlock + " to " + toBlock
-    call = p_url.replace("$1", fromBlock).replace("$2", toBlock) 
+    print "reading blocks from " + str(fromBlock) + " to " + str(toBlock)
+    call = p_url.replace("$1", str(fromBlock)).replace("$2", str(toBlock))
     getTradesInBlockRange(call, file,ethereumAdress[2:])
   file.close()
 
